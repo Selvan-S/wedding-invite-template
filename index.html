@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Grand Wedding Invitation • 24 October 2026 • M.R.P Thirumana Mandapam</title>
+  <meta name="description" content="You are cordially invited to celebrate the grand wedding on Saturday, 24 October 2026 at M.R.P Thirumana Mandapam, Vadaputhur, Tamil Nadu.">
+  
+  <!-- Open Graph Meta Tags -->
+  <meta property="og:title" content="Grand Wedding Invitation • 24 October 2026">
+  <meta property="og:description" content="Join us in celebrating the holy union at M.R.P Thirumana Mandapam, Vadaputhur. Save the date!">
+  <meta property="og:image" content="assets/images/invite-card-2026.jpg">
+  <meta property="og:type" content="website">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700;900&family=Great+Vibes&family=Playfair+Display:ital,wght@0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/reveal.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+  <!-- Floating Falling Petals Layer -->
+  <canvas id="petal-canvas"></canvas>
+
+  <!-- ================================================================
+       1. 3D ROYAL UNVEILING OVERLAY (Wax Seal & Gateway)
+       ================================================================ -->
+  <div id="royal-gate-overlay" class="royal-gate-overlay">
+    <div class="gate-door gate-door-left"></div>
+    <div class="gate-door gate-door-right"></div>
+
+    <div class="gate-seal-container">
+      <button id="gate-seal-btn" class="gate-seal-button" aria-label="Break Wax Seal to Open Invitation">
+        <img src="assets/images/wax-seal.png" alt="Royal Monogram Wax Seal" class="gate-seal-image">
+      </button>
+
+      <div class="gate-instructions">
+        ✦ TAP SEAL TO UNVEIL INVITATION ✦
+        <span>With auspicious wedding melodies & blessings</span>
+      </div>
+    </div>
+
+    <button id="gate-skip-btn" class="gate-skip-btn">Skip to Invitation →</button>
+  </div>
+
+  <!-- ================================================================
+       2. FLOATING AUDIO DISC & SOUNDWAVE PLAYER
+       ================================================================ -->
+  <aside id="royal-audio-player" class="royal-audio-player" title="Click to play / pause auspicious music">
+    <div id="audio-disc" class="audio-disc">
+      <div class="audio-disc-center">♪</div>
+    </div>
+    <div class="audio-meta">
+      <span class="audio-title">Mangalyam Wedding Flute</span>
+      <div class="audio-subtitle">
+        <div class="soundwaves">
+          <div class="soundwave-bar"></div>
+          <div class="soundwave-bar"></div>
+          <div class="soundwave-bar"></div>
+          <div class="soundwave-bar"></div>
+        </div>
+        <span id="audio-status">Tap disc for music</span>
+      </div>
+    </div>
+  </aside>
+
+  <!-- ================================================================
+       3. HERO SECTION WITH 3D HOLOGRAPHIC TILT INVITATION
+       ================================================================ -->
+  <header class="hero-section">
+    <div class="hero-backdrop-ornament"></div>
+
+    <div class="container hero-grid">
+      <div class="hero-content">
+        <div class="hero-monogram-badge">
+          <span>👑 SUBHA MUHURTHAM INVITATION</span>
+        </div>
+        
+        <h1 class="hero-title">Save The Date</h1>
+        <p class="hero-tagline">Two Hearts • One Journey</p>
+
+        <div class="hero-date-badge">
+          <span style="font-size: 1.3rem;">📅</span>
+          <span>Saturday, 24 October 2026</span>
+        </div>
+
+        <p class="hero-venue-note">
+          We cordially invite you and your family to celebrate our wedding ceremony at <br>
+          <strong class="text-crimson">M.R.P Thirumana Mandapam</strong>, Vadaputhur, Tamil Nadu.
+        </p>
+
+        <div class="hero-cta-group">
+          <a href="#rsvp" class="btn-royal btn-royal-primary">RSVP via WhatsApp</a>
+          <a href="#schedule" class="btn-royal btn-royal-outline">View Itinerary</a>
+        </div>
+      </div>
+
+      <!-- 3D Holographic Tilt Card Container -->
+      <div class="invite-tilt-wrapper">
+        <div class="invite-tilt-card" id="invite-card">
+          <img src="assets/images/invite-card-2026.jpg" alt="Wedding Invitation Card - 24 October 2026" class="invite-tilt-img">
+          <div class="invite-tilt-shine"></div>
+        </div>
+
+        <div class="invite-download-bar">
+          <a href="assets/images/invite-card-2026.jpg" download="Wedding-Invite-24Oct2026.jpg" class="btn-royal btn-royal-outline" style="font-size: 0.85rem; padding: 0.6rem 1.4rem;">
+            <span>📥 Download Invite Card (HD)</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ================================================================
+       4. LIVE PRECISION COUNTDOWN TIMER
+       ================================================================ -->
+  <section class="countdown-section">
+    <div class="container">
+      <span class="section-tag">Auspicious Muhurtham Countdown</span>
+      <h2 class="section-title">Counting The Golden Moments</h2>
+      <p class="section-subtitle">Until we tie the sacred knot</p>
+
+      <div class="countdown-grid">
+        <div class="countdown-box">
+          <div id="cd-days" class="countdown-digit">00</div>
+          <div class="countdown-label">Days</div>
+        </div>
+        <div class="countdown-box">
+          <div id="cd-hours" class="countdown-digit">00</div>
+          <div class="countdown-label">Hours</div>
+        </div>
+        <div class="countdown-box">
+          <div id="cd-mins" class="countdown-digit">00</div>
+          <div class="countdown-label">Minutes</div>
+        </div>
+        <div class="countdown-box">
+          <div id="cd-secs" class="countdown-digit">00</div>
+          <div class="countdown-label">Seconds</div>
+        </div>
+      </div>
+
+      <div class="calendar-sync-actions">
+        <button id="btn-gcal-sync" class="btn-royal btn-royal-outline">
+          <span>📅 Add to Google Calendar</span>
+        </button>
+        <button id="btn-ical-sync" class="btn-royal btn-royal-outline">
+          <span>🍏 Download Apple iCal (.ics)</span>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Auspicious Divider -->
+  <div class="royal-divider">
+    <span class="motif">🪔</span>
+  </div>
+
+  <!-- ================================================================
+       5. MEET THE COUPLE SPOTLIGHT
+       ================================================================ -->
+  <section class="couple-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">The Bride & Groom</span>
+        <h2 class="section-title">Two Souls, One Destiny</h2>
+        <p class="section-subtitle">Better Together</p>
+      </div>
+
+      <div class="couple-grid">
+        <!-- Groom Card -->
+        <div class="couple-card">
+          <div class="couple-avatar-frame">
+            <img src="assets/images/groom.jpg" alt="The Groom">
+          </div>
+          <h3 class="couple-name">The Groom</h3>
+          <p class="couple-role">The Handsome Groom</p>
+          <p class="couple-bio">
+            A software craftsman and passionate explorer who believes that life's finest adventures are the ones shared together hand-in-hand.
+          </p>
+          <div class="couple-quote">
+            "With you, every ordinary moment turns into an extraordinary memory."
+          </div>
+        </div>
+
+        <!-- Bride Card -->
+        <div class="couple-card">
+          <div class="couple-avatar-frame">
+            <img src="assets/images/bride.jpg" alt="The Bride">
+          </div>
+          <h3 class="couple-name">The Bride</h3>
+          <p class="couple-role">The Beautiful Bride</p>
+          <p class="couple-bio">
+            A creative soul and sunshine enthusiast whose infectious laughter and warm heart bring joy to every room she enters.
+          </p>
+          <div class="couple-quote">
+            "You are my answered prayer, my favorite chapter, and my forever home."
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Auspicious Divider -->
+  <div class="royal-divider">
+    <span class="motif">💐</span>
+  </div>
+
+  <!-- ================================================================
+       6. SINGLE-DAY CELEBRATION SCHEDULE (24 October 2026)
+       ================================================================ -->
+  <section id="schedule" class="schedule-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Saturday, 24 October 2026</span>
+        <h2 class="section-title">The Celebration Itinerary</h2>
+        <p class="section-subtitle">Auspicious ceremonies of the day</p>
+      </div>
+
+      <!-- Schedule Timeline rendered dynamically from wedding-config.js -->
+      <div id="schedule-timeline" class="timeline-container"></div>
+
+      <!-- Dress Code Suggestions & Palette Visualizer -->
+      <div class="dress-code-card">
+        <h3 style="font-family: var(--font-heading); color: var(--color-crimson-deep); font-size: 1.3rem;">
+          ✨ Suggested Attire Palette
+        </h3>
+        <p style="font-size: 0.9rem; color: var(--color-text-secondary); margin-top: 0.4rem;">
+          We would love to celebrate with you in traditional silks, royal zari, and vibrant festive tones!
+        </p>
+
+        <div id="dress-code-swatches" class="swatches-grid"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Auspicious Divider -->
+  <div class="royal-divider">
+    <span class="motif">🪔</span>
+  </div>
+
+  <!-- ================================================================
+       7. VENUE & TRAVEL CONCIERGE (M.R.P Thirumana Mandapam)
+       ================================================================ -->
+  <section class="venue-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Location & Travel</span>
+        <h2 class="section-title">The Wedding Venue</h2>
+        <p class="section-subtitle">Where memories will be made</p>
+      </div>
+
+      <div class="venue-card-wrapper">
+        <div class="venue-info">
+          <h3 class="venue-name">M.R.P Thirumana Mandapam</h3>
+          <p class="venue-address">📍 Vadaputhur, Tamil Nadu 642109</p>
+
+          <div class="venue-travel-grid">
+            <div class="travel-point">
+              <span class="travel-icon">🚆</span>
+              <div>
+                <strong>Nearest Railways:</strong> Kinathukadavu (~10 km) • Pollachi Junction (~18 km) • Coimbatore Junction (~35 km)
+              </div>
+            </div>
+            <div class="travel-point">
+              <span class="travel-icon">✈️</span>
+              <div>
+                <strong>Nearest Airport:</strong> Coimbatore International Airport (CJB) (~42 km)
+              </div>
+            </div>
+            <div class="travel-point">
+              <span class="travel-icon">🚗</span>
+              <div>
+                <strong>Parking & Access:</strong> Spacious dedicated car and two-wheeler parking inside venue premises.
+              </div>
+            </div>
+          </div>
+
+          <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+            <a href="https://maps.app.goo.gl/1GnqwUPNKJN2rUPX6?g_st=ac" target="_blank" rel="noopener noreferrer" class="btn-royal btn-royal-primary">
+              <span>🗺️ Navigate via Google Maps</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="venue-map-embed">
+          <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15672.48202476536!2d76.99!3d10.82!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba84f64c0416975%3A0x8fa2c2bde47f86f8!2sM.R.P%20Thirumana%20Mandapam!5e0!3m2!1sen!2sin!4v1700000000000" 
+            title="Google Maps Location of M.R.P Thirumana Mandapam"
+            loading="lazy">
+          </iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Auspicious Divider -->
+  <div class="royal-divider">
+    <span class="motif">♥</span>
+  </div>
+
+  <!-- ================================================================
+       8. LOVE STORY MILESTONES
+       ================================================================ -->
+  <section class="schedule-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Our Story</span>
+        <h2 class="section-title">The Journey of Two Hearts</h2>
+        <p class="section-subtitle">How it all began</p>
+      </div>
+
+      <div id="story-timeline" class="timeline-container"></div>
+    </div>
+  </section>
+
+  <!-- Auspicious Divider -->
+  <div class="royal-divider">
+    <span class="motif">🌸</span>
+  </div>
+
+  <!-- ================================================================
+       9. LIVE BLESSINGS WALL & GUEST BOOK
+       ================================================================ -->
+  <section class="blessings-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Digital Guest Book</span>
+        <h2 class="section-title">Blessings & Well Wishes</h2>
+        <p class="section-subtitle">Leave your love for the couple</p>
+      </div>
+
+      <div class="blessings-layout">
+        <!-- Blessing Submission Form -->
+        <div class="blessing-form-card">
+          <h3 style="font-family: var(--font-heading); color: var(--color-crimson-deep); margin-bottom: 1.2rem; font-size: 1.3rem;">
+            Send Your Blessings
+          </h3>
+
+          <form id="blessing-form">
+            <div class="form-group">
+              <label for="blessing-name" class="form-label">Your Name</label>
+              <input type="text" id="blessing-name" class="form-input" placeholder="e.g. Ramesh & Geetha" required>
+            </div>
+
+            <div class="form-group">
+              <label for="blessing-relation" class="form-label">Relationship / Role</label>
+              <input type="text" id="blessing-relation" class="form-input" placeholder="e.g. Family Friend / Cousin">
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">Choose Blessing Icon</label>
+              <div class="emoji-selector">
+                <button type="button" class="emoji-btn active" data-emoji="💐">💐</button>
+                <button type="button" class="emoji-btn" data-emoji="💖">💖</button>
+                <button type="button" class="emoji-btn" data-emoji="🪔">🪔</button>
+                <button type="button" class="emoji-btn" data-emoji="✨">✨</button>
+                <button type="button" class="emoji-btn" data-emoji="🌸">🌸</button>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="blessing-message" class="form-label">Your Heartfelt Blessing</label>
+              <textarea id="blessing-message" class="form-textarea" rows="4" placeholder="Wishing you a lifetime filled with happiness, laughter, and prosperity..." required></textarea>
+            </div>
+
+            <button type="submit" class="btn-royal btn-royal-primary" style="width: 100%;">
+              <span>Post Blessing on Wall ✦</span>
+            </button>
+          </form>
+        </div>
+
+        <!-- Wall of Wishes -->
+        <div>
+          <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
+            <h3 style="font-family: var(--font-heading); color: var(--color-crimson-deep); font-size: 1.2rem;">
+              Guest Wishes Wall
+            </h3>
+            <button id="btn-export-blessings" class="btn-royal btn-royal-outline" style="font-size: 0.75rem; padding: 0.4rem 1rem;">
+              📥 Export All Wishes
+            </button>
+          </div>
+
+          <div id="blessings-wall" class="blessings-wall-container"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Auspicious Divider -->
+  <div class="royal-divider">
+    <span class="motif">🪔</span>
+  </div>
+
+  <!-- ================================================================
+       10. INSTANT WHATSAPP RSVP CONCIERGE
+       ================================================================ -->
+  <section id="rsvp" class="rsvp-section">
+    <div class="container">
+      <div class="rsvp-card-container">
+        <h2 class="section-title" style="margin-top: 0.5rem;">Will You Join Us?</h2>
+        <p class="section-subtitle">We look forward to celebrating with you</p>
+        <p style="font-size: 0.95rem; color: var(--color-text-secondary); margin-top: 0.5rem;">
+          Kindly confirm your presence by 10 October 2026. Your response helps us make the arrangements special for you!
+        </p>
+
+        <form id="rsvp-form">
+          <div class="rsvp-form-grid">
+            <div class="form-group">
+              <label for="rsvp-name" class="form-label">Full Name *</label>
+              <input type="text" id="rsvp-name" class="form-input" placeholder="Your name" required>
+            </div>
+
+            <div class="form-group">
+              <label for="rsvp-phone" class="form-label">Phone Number (Optional)</label>
+              <input type="tel" id="rsvp-phone" class="form-input" placeholder="Contact number">
+            </div>
+
+            <div class="form-group">
+              <label for="rsvp-attending" class="form-label">Attendance Status</label>
+              <select id="rsvp-attending" class="form-select">
+                <option value="Joyfully Attending in Person">Joyfully Attending in Person 🎉</option>
+                <option value="Celebrating with You in Spirit">Celebrating with You in Spirit 💖</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="rsvp-guests" class="form-label">Total Attending</label>
+              <select id="rsvp-guests" class="form-select">
+                <option value="1 Guest">1 Guest</option>
+                <option value="2 Guests" selected>2 Guests</option>
+                <option value="3 Guests">3 Guests</option>
+                <option value="Family (4+ Guests)">Family (4+ Guests)</option>
+              </select>
+            </div>
+
+            <div class="form-group rsvp-full-width">
+              <label for="rsvp-meal" class="form-label">Dietary Preference</label>
+              <select id="rsvp-meal" class="form-select">
+                <option value="Traditional South Indian Feast (Pure Veg)">Traditional South Indian Feast (Pure Veg) 🍃</option>
+                <option value="Jain Food / No Onion No Garlic">Jain Food / No Onion No Garlic ✨</option>
+              </select>
+            </div>
+
+            <div class="form-group rsvp-full-width">
+              <label for="rsvp-note" class="form-label">Personal Message for the Couple</label>
+              <textarea id="rsvp-note" class="form-textarea" rows="2" placeholder="Any warm note or travel details..."></textarea>
+            </div>
+          </div>
+
+          <button type="submit" class="btn-royal btn-whatsapp" style="width: 100%; font-size: 1.05rem; padding: 1rem 2rem;">
+            <span>💬 Confirm RSVP via WhatsApp</span>
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================================================================
+       11. ROYAL FOOTER
+       ================================================================ -->
+  <footer class="royal-footer">
+    <div class="container">
+      <div class="footer-monogram">G & B</div>
+      <div class="footer-hashtag">#GrandWedding2026</div>
+      <p class="footer-blessing-text">
+        "May divine grace bless this sacred union with lifelong love, boundless joy, and togetherness."
+      </p>
+      <div class="royal-divider" style="margin: 1.5rem 0;">
+        <span class="motif">✦</span>
+      </div>
+      <p style="font-size: 0.8rem; opacity: 0.6;">
+        24 October 2026 • M.R.P Thirumana Mandapam, Vadaputhur, Tamil Nadu
+      </p>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="wedding-config.js"></script>
+  <script src="js/petals.js"></script>
+  <script src="js/tilt.js"></script>
+  <script src="js/countdown.js"></script>
+  <script src="js/audio.js"></script>
+  <script src="js/blessings.js"></script>
+  <script src="js/rsvp.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

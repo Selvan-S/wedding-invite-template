@@ -1,0 +1,125 @@
+/* ====================================================================
+   RESPONSIVE DESIGN SYSTEM (responsive.css)
+   Mobile-first optimizations for WhatsApp views and large screens
+   ==================================================================== */
+
+@media (max-width: 992px) {
+  .hero-grid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    text-align: center;
+  }
+
+  .hero-content {
+    text-align: center;
+  }
+
+  .hero-cta-group {
+    justify-content: center;
+  }
+
+  .venue-card-wrapper {
+    grid-template-columns: 1fr;
+  }
+
+  .venue-map-embed {
+    min-height: 320px;
+  }
+
+  .blessings-layout {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 2.8rem;
+  }
+
+  .hero-tagline {
+    font-size: 2.2rem;
+  }
+
+  .countdown-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+
+  .countdown-digit {
+    font-size: 2.2rem;
+  }
+
+  .couple-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .timeline-container::before {
+    left: 24px;
+  }
+
+  .timeline-item {
+    justify-content: flex-start !important;
+    padding-left: 55px;
+  }
+
+  .timeline-card {
+    width: 100%;
+  }
+
+  .timeline-badge {
+    left: 6px !important;
+    right: auto !important;
+  }
+
+  .rsvp-form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .rsvp-full-width {
+    grid-column: span 1;
+  }
+
+  .gate-seal-button {
+    width: 140px;
+    height: 140px;
+  }
+
+  .gate-instructions {
+    font-size: 0.85rem;
+    padding: 0.5rem 1.4rem;
+  }
+
+  .royal-audio-player {
+    bottom: 1.2rem;
+    right: 1.2rem;
+    padding: 0.4rem 0.8rem 0.4rem 0.4rem;
+  }
+
+  .audio-title {
+    font-size: 0.75rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-title {
+    font-size: 2.3rem;
+  }
+
+  .hero-tagline {
+    font-size: 1.9rem;
+  }
+
+  .section-title {
+    font-size: 2rem;
+  }
+
+  .btn-royal {
+    width: 100%;
+  }
+
+  .invite-tilt-card {
+    max-width: 320px;
+  }
+}

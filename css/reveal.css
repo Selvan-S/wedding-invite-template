@@ -1,0 +1,199 @@
+/* ====================================================================
+   ROYAL UNVEILING & WAX SEAL SEQUENCE (reveal.css)
+   Interactive 3D Gateway / Royal Envelope Opening Mechanics
+   ==================================================================== */
+
+.royal-gate-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  perspective: 1500px;
+  background: #200406;
+  overflow: hidden;
+  transition: opacity 1.2s var(--ease-royal), visibility 1.2s var(--ease-royal);
+}
+
+.royal-gate-overlay.unveiled {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+/* 3D Gate Panels (Left & Right royal doors) */
+.gate-door {
+  position: absolute;
+  top: 0;
+  width: 50vw;
+  height: 100vh;
+  background: 
+    radial-gradient(circle at center, rgba(158, 42, 43, 0.95) 0%, #35080A 100%),
+    url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 0l30 30-30 30L0 30z' fill='%23d4af37' fill-opacity='0.04'/%3E%3C/svg%3E");
+  background-size: cover, 60px 60px;
+  display: flex;
+  align-items: center;
+  box-shadow: inset 0 0 80px rgba(0,0,0,0.8);
+  transition: transform 1.6s cubic-bezier(0.7, 0, 0.2, 1);
+  transform-style: preserve-3d;
+  z-index: 1;
+}
+
+.gate-door-left {
+  left: 0;
+  transform-origin: left center;
+  border-right: 2px solid var(--color-gold);
+}
+
+.gate-door-right {
+  right: 0;
+  transform-origin: right center;
+  border-left: 2px solid var(--color-gold);
+}
+
+/* Door Arch Borders & Motifs */
+.gate-door-left::after,
+.gate-door-right::after {
+  content: '';
+  position: absolute;
+  top: 2rem;
+  bottom: 2rem;
+  width: calc(100% - 4rem);
+  border: 1px solid rgba(212, 175, 55, 0.3);
+  pointer-events: none;
+}
+
+.gate-door-left::after {
+  right: 1.5rem;
+  border-top-left-radius: 40px;
+  border-bottom-left-radius: 40px;
+}
+
+.gate-door-right::after {
+  left: 1.5rem;
+  border-top-right-radius: 40px;
+  border-bottom-right-radius: 40px;
+}
+
+/* When Doors Open */
+.royal-gate-overlay.opening .gate-door-left {
+  transform: rotateY(-105deg);
+}
+
+.royal-gate-overlay.opening .gate-door-right {
+  transform: rotateY(105deg);
+}
+
+/* Center Wax Seal Seal Medallion */
+.gate-seal-container {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.4s var(--ease-royal);
+}
+
+.gate-seal-container:hover {
+  transform: scale(1.04);
+}
+
+.gate-seal-button {
+  position: relative;
+  width: 170px;
+  height: 170px;
+  border-radius: 50%;
+  cursor: pointer;
+  background: transparent;
+  border: none;
+  outline: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  filter: drop-shadow(0 15px 35px rgba(0, 0, 0, 0.7));
+}
+
+.gate-seal-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transition: transform 0.6s var(--ease-royal), filter 0.4s;
+  animation: seal-pulse 2.8s infinite ease-in-out;
+}
+
+.gate-seal-container:hover .gate-seal-image {
+  filter: brightness(1.1) drop-shadow(0 0 25px rgba(212, 175, 55, 0.7));
+}
+
+@keyframes seal-pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
+/* Breaking Seal Animation */
+.royal-gate-overlay.opening .gate-seal-container {
+  transform: scale(1.4);
+  opacity: 0;
+  filter: blur(10px);
+  transition: all 0.9s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Invitation Typography on Gate */
+.gate-instructions {
+  margin-top: 1.8rem;
+  color: var(--color-gold-light);
+  font-family: var(--font-heading);
+  letter-spacing: 2px;
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  background: rgba(40, 6, 8, 0.7);
+  padding: 0.6rem 1.8rem;
+  border-radius: 30px;
+  border: 1px solid rgba(212, 175, 55, 0.4);
+  backdrop-filter: blur(6px);
+  animation: bounce-gentle 2s infinite ease-in-out;
+}
+
+.gate-instructions span {
+  display: block;
+  font-size: 0.75rem;
+  font-family: var(--font-sans);
+  color: #fff;
+  opacity: 0.85;
+  letter-spacing: 1px;
+  margin-top: 0.2rem;
+  text-transform: none;
+}
+
+@keyframes bounce-gentle {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-4px); }
+}
+
+/* Fast Skip Button */
+.gate-skip-btn {
+  position: absolute;
+  bottom: 2rem;
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.6);
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 0.4rem 1.2rem;
+  border-radius: 20px;
+  cursor: pointer;
+  z-index: 10;
+  transition: all 0.3s;
+}
+
+.gate-skip-btn:hover {
+  color: var(--color-gold);
+  border-color: var(--color-gold);
+  background: rgba(0, 0, 0, 0.4);
+}
